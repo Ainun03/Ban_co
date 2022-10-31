@@ -24,10 +24,11 @@ function Card() {
                     { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }
                     ).format(20000)
                 }
+                <span className='font-thin text-xs text-black'>/gram</span>
                 </h3>
             </div>
         </div>
-        <div className='card hover:skew-y-6 rounded-md p-2 shadow-main shadow-slate-600 h-48 shadow-xl cursor-pointer' 
+        <div className='card hover:scale-110 rounded-md p-2 shadow-main shadow-slate-600 h-48 shadow-xl cursor-pointer' 
         // onClick={() => {
         // // Checking product seller with user logged\
         // if ((item.userId == auth.login.id && auth.login.id !== undefined)) {
@@ -47,6 +48,7 @@ function Card() {
                     { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }
                     ).format(20000)
                 }
+                <span className='font-thin text-xs text-black'>/gram</span>
                 </h3>
             </div>
         </div>
