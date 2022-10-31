@@ -12,7 +12,7 @@ function MyNavbar() {
   const [show, setShow] = useState(true);
 
     const navigation = [
-        { name: 'Home', href: '#', current: true },
+        { name: 'Home', href: '/', current: true },
         { name: 'Shop', href: '#', current: false },
         { name: 'Page', href: '#', current: false },
         { name: 'Service', href: '#', current: false },
