@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-function JumbrotonHome() {
+function JumbrotonCoco() {
     return(
         <Fragment>
             <div className="bg-gradient-to-br h-full relative shadow-md from-[#2EB51F40]">
@@ -9,7 +9,7 @@ function JumbrotonHome() {
                    <div className="flex items-center w-full justify-end">
                         <img  
                             className='max-w-[45%] md:max-w-[35%] ' 
-                            src='/assets/image/orange2.png' alt='logo' />
+                            src='/assets/image/kelapa.png' alt='logo' />
                    </div>
                 </div>
 {/* back */}
@@ -44,17 +44,14 @@ function JumbrotonHome() {
  {/* ----- */}
                 <div className=" inset-y-px inset-x-24 flex justify-start items-center h-full overflow-hidden w-100 absolute max-w-screen-3xl">
                    <div className=" backdrop-brightness-105 bg-white/10 px-6 pt-6 shadow-xl w-full md:w-auto  h-72 inset-px ">
-                            <h1 className="text-3xl text-black-500 font-medium">Many <span className="text-primary">BENEFITS</span>
-                                <br></br>
-                                in bananas and coconuts 
-                                
-                                <p className="text-sm text-black-500 font-normal pt-4">There are complete fruits and vegetables scattered throughout Indonesia</p>
+                            <h1 className="text-3xl text-black-500 font-medium"><span > COCONUTS </span> <span className="text-primary "> Tree </span>
+                                <p className="text-sm text-black-500 font-normal pt-8">There are complete fruits and vegetables scattered throughout Indonesia </p>
                             </h1>
-                            <div className="flex w-full justify-center pt-6">
+                            {/* <div className="flex w-full justify-center pt-6">
                                 <button type="submit" className="px-4 py-2 border-4  hover:bg-[#d9f99d] hover:border-[#d9f99d] hover:text-[#78716c] border-primary bg-primary text-white font-medium rounded-xl">
                                 Order Now
                                 </button>
-                            </div>
+                            </div> */}
                    </div>
                 </div>
    
@@ -69,4 +66,4 @@ function JumbrotonHome() {
 
     )
 }
-export default JumbrotonHome
+export default JumbrotonCoco;
