@@ -38,13 +38,13 @@ const CenteredCarousel = () => {
           <div className="py-6 max-w-screen-2xl  hidden md:block">
             <Slider {...params}>
               <div className=" ">
-                <img className=' mx-auto rounded-2xl' src='/assets/image/pot.png' alt='banner' />
+                <img className=' px-2 rounded-3xl' src='/assets/image/pot.png' alt='banner' />
               </div>
               <div>
-                <img className=' mx-auto rounded-2xl' src='/assets/image/batok.png' alt='banner' />
+                <img className=' px-2 rounded-3xl' src='/assets/image/batok.png' alt='banner' />
               </div>
               <div>
-                <img className=' mx-auto rounded-2xl' src='/assets/image/batok.png' alt='banner' />
+                <img className=' px-2 rounded-3xl' src='/assets/image/batok.png' alt='banner' />
               </div>
             </Slider>
           </div>

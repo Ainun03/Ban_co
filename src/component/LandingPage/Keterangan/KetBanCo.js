@@ -21,7 +21,7 @@ function KetBan() {
                                 <p className="text-lg text-justify text-black-500 font-normal pt-4">Merupakan Gunung dengan ketinggian mencapai 2.438 mdpl ini terletak di Sumatera Barat. Gunung ini menjadi yang tertinggi ke tiga belas di Sumatra Barat, Indonesia.</p>
                                 
                                 <div className="flex w-full items-end h-full items-end  justify-end pt-6">
-                                    <button type="submit" onClick={() => navigate('/kelapa')} className="px-4 py-2 border-2 border-primary hover:text-white hover:bg-[#79B51F] text-primary font-medium rounded-xl">
+                                    <button type="submit" onClick={() => navigate('/banana')} className="px-4 py-2 border-2 border-primary hover:text-white hover:bg-[#79B51F] text-primary font-medium rounded-xl">
                                         Selengkapnya
                                     </button>
                                 </div>
