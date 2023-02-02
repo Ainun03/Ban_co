@@ -1,9 +1,15 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState  } from "react";
+import { useNavigate, useParams } from 'react-router-dom';
 
 import MyNavbar from "../component/LandingPage/Navbar";
 import CardBanana from "../component/BananaPage/Card/Card";
 import JumbrotonBanana from "../component/BananaPage/Jumbroton/Jumbroton";
 import Footer from "../component/LandingPage/Footer";
+
+// redux
+import { useDispatch, useSelector } from 'react-redux';
+import { getListArticle } from "../slices/articleSlice";
+import { getProdukType, getListProdukType } from "../slices/productSlice"
 
 // carosoul
 import Slider from "react-slick";
@@ -63,6 +69,28 @@ const CenteredCarousel = () => {
     };
 
 function BananaPage() {
+  const [produkTypeId, setProductTypeId] = useState('');
+
+  const [articles, setArticles] = useState([]);
+  const {auth, article, product  } = useSelector(state => state);
+  const dispatch = useDispatch();
+
+  // Get type 2
+  let typeId=2;
+
+  useEffect(() => {
+      dispatch(getProdukType({
+        id : typeId
+      }));
+    console.log("id",produkTypeId)
+  }, [dispatch]);
+
+  useEffect(() => {
+    setProductTypeId(product.productsType.product);
+  }, [product]);
+  // ===== ///
+
+
     return(
         <Fragment>
             <div>
@@ -76,7 +104,22 @@ function BananaPage() {
                             <h1 className="text-lg text-primary font-semibold">See All</h1>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-6 gap-4 py-3">
-                        <CardBanana/>
+                        {console.log("bawaj",produkTypeId)}
+                        {
+                                    produkTypeId ? (
+                                      produkTypeId.map((item) => 
+                                    // <div className="snap-x w-screen h-screen overflow-scroll bg-white snap-mandatory">
+                                        // <div className="mx-2 my-3">
+                                            <CardBanana key={item.id} product={item} />
+                                        // </div>
+                                    //   </div>
+                                    )
+                                ) : (
+                                    <div className='w-[90vw] text-center md:text-start'>
+                                    <p className='mt-20 text-lg font-bold'>Produk Kosong</p>
+                                    </div>
+                                )
+                                }
                         </div>
                     </div>
                     {/* <Diskon/> */}

@@ -1,6 +1,9 @@
 import React, { Fragment } from "react";
 
+import { useNavigate } from 'react-router-dom';
+
 function JumbrotonHome() {
+    const navigate = useNavigate();
     return(
         <Fragment>
             <div className="bg-gradient-to-br h-full relative shadow-md from-[#2EB51F40]">
@@ -51,7 +54,7 @@ function JumbrotonHome() {
                                 <p className="text-sm text-black-500 font-normal pt-4">There are complete fruits and vegetables scattered throughout Indonesia</p>
                             </h1>
                             <div className="flex w-full justify-center pt-6">
-                                <button type="submit" className="px-4 py-2 border-4  hover:bg-[#d9f99d] hover:border-[#d9f99d] hover:text-[#78716c] border-primary bg-primary text-white font-medium rounded-xl">
+                                <button type="submit"  onClick={() => navigate('/list-product')} className="px-4 py-2 border-4  hover:bg-[#d9f99d] hover:border-[#d9f99d] hover:text-[#78716c] border-primary bg-primary text-white font-medium rounded-xl">
                                 Order Now
                                 </button>
                             </div>

@@ -1,6 +1,16 @@
 import React, { Fragment } from "react";
 
+import { logout } from "../../../slices/authSlice";
+import { clearData } from "../../../slices/userSlice";
+import { useSelector, useDispatch } from 'react-redux';
+
+import { useNavigate} from 'react-router-dom';
+
 function Diskon(){
+    const dispatch = useDispatch();
+	const { auth } = useSelector(state => state);
+    const navigate = useNavigate();
+
     return(
         <Fragment>
             <div className="py-10 ">
@@ -15,9 +25,26 @@ function Diskon(){
                                 <p className="text-sm text-black-500 font-normal pt-4">Just Sign Up & Sign In it now to become member</p>
                             </h1>
                             <div className="flex w-full justify-start pt-6">
-                                <button type="submit" className="px-4 py-2 border-4  hover:bg-[#d9f99d] hover:border-[#d9f99d] hover:text-[#78716c] border-primary bg-primary text-white font-medium rounded-xl">
-                                SIGN UP
+                            {
+                                auth.login.token ? (
+                                <button
+                                    onClick={() => {
+                                        dispatch(logout());
+                                        dispatch(clearData());
+                                  }}
+                                 type="submit" className="px-4 py-2 border-4 hidden  hover:bg-[#d9f99d] hover:border-[#d9f99d] hover:text-[#78716c] border-primary bg-primary text-white font-medium rounded-xl">
+                                Keluar
                                 </button>
+                                ) : (
+                                    <div>
+                                        <button
+                                        onClick={() => navigate('/login')}
+                                        type="submit" className="px-4 py-2 border-4  hover:bg-[#d9f99d] hover:border-[#d9f99d] hover:text-[#78716c] border-primary bg-primary text-white font-medium rounded-xl">
+                                        Masuk
+                                        </button>
+
+                                    </div>
+                                )}
                             </div>
                         </div>
                         <div className="flex justify-end">
